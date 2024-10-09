@@ -1,0 +1,22 @@
+use proconio::{fastout, input};
+use std::collections::VecDeque;
+
+#[fastout]
+fn main() {
+    input!(
+        q: usize
+    );
+
+    let mut queue = VecDeque::new();
+    for _ in 0..q {
+        input!(t: usize);
+        if t == 1 {
+            input!(x: String);
+            queue.push_back(x);
+        } else if t == 2 {
+            println!("{}", queue.back().unwrap());
+        } else {
+            queue.pop_back();
+        }
+    }
+}
